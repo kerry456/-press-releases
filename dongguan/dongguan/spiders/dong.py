@@ -40,6 +40,12 @@ class DongSpider(CrawlSpider):
                 return None
             yield scrapy.Request(url='http://wz.sun0769.com/index.php/question/questionType?type=4&page=' + \
                                  str(self.offset),callback=self.parse)
+            if self.offset == 32460:
+                continue
+            else:
+                yield scrapy.Request(url='http://wz.sun0769.com/index.php/question/questionType?type=4&page=' + \
+                                 str(self.offset),callback=self.parse)
+                
     # def content_item(self,response):
     #     item = DongguanItem()
     #     item['content'] = response.xpath('//div[@class="contentext"]/text() | //div[@class="c1 text14_2"]/text()').extract_first()
