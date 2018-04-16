@@ -15,7 +15,7 @@ class DongguanPipeline(object):
         # self.start_time = time.time()
         #在spider开始时创建数据库链接，
         try:
-            self.con = pymysql.connect(host="123.206.60.72", port=13306, user="root", passwd="123456",db='Myhome',use_unicode = True,charset='utf8')
+            self.con = pymysql.connect(host="数据库IP", port=端口, user="账号", passwd="密码",db='数据库',use_unicode = True,charset='utf8')
         #使用cursor()方法获取操作游标
             self.cursor = self.con.cursor()
             print('数据库连接成功')
